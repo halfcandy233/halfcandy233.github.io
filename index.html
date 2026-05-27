@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <!-- 移动端适配核心标签 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
     <style>
@@ -16,7 +17,7 @@
             background-color: #fdddef;
             background-image: linear-gradient(120deg, #fdddef, #fbcfe8);
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 110px;
             animation: bgMove 8s linear infinite;
             position: relative;
         }
@@ -26,7 +27,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 560px;
+            width: 160px;
             z-index: 1;
         }
         .left-miku { left: 30px; }
@@ -117,8 +118,8 @@
 
         /* 顶部、底部初音大图 */
         .miku-full {
-            max-width: 560px;
-            margin: 0px auto;
+            max-width: 550px;
+            margin: 0 auto;
             text-align: center;
         }
         .miku-full img {
@@ -126,9 +127,11 @@
             border-radius: 16px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
+
+        /* 四角图片样式 */
         .corner-img {
             position: absolute;
-            width: 560px;
+            width: 160px;
             z-index: 1;
         }
         .corner-img img {
@@ -137,20 +140,54 @@
             border-radius: 12px;
         }
         .top-left {
-            top: 20px;
+            top: 0;
             left: 30px;
         }
         .top-right {
-            top: 20px;
+            top: 0;
             right: 30px;
         }
         .bottom-left {
-            bottom: 20px;
+            bottom: 0;
             left: 30px;
         }
         .bottom-right {
-            bottom: 20px;
+            bottom: 0;
             right: 30px;
+        }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            /* 手机隐藏左右侧边图，解决重叠 */
+            .side-miku {
+                display: none;
+            }
+            /* 缩小四角图 */
+            .corner-img {
+                width: 90px;
+            }
+            .top-left {
+                top: 10px;
+                left: 10px;
+            }
+            .top-right {
+                top: 10px;
+                right: 10px;
+            }
+            .bottom-left {
+                bottom: 10px;
+                left: 10px;
+            }
+            .bottom-right {
+                bottom: 10px;
+                right: 10px;
+            }
+            .miku-full {
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
@@ -179,16 +216,20 @@
             <p><span class="label">爱好：</span>编程、阅读、运动、听音乐</p>
             <p><span class="label">擅长：</span>HTML、CSS、JavaScript、Python</p>
             <p><span class="label">个人简介：</span><br>热爱技术，喜欢学习新知识，做事认真负责，乐于沟通与分享。</p>
+
+            <!-- B站图片链接 -->
+            <a href="https://www.bilibili.com/" target="_blank" style="margin-top:20px;display:inline-block;">
+              <img src="favicon.ico" alt="B站" style="width:40px;height:40px;">
+            </a>
         </div>
-        <a href="https://www.bilibili.com/" target="_blank" style="margin-top:20px;display:inline-block;">
-          <img src="favicon.ico" alt="B站" style="width:50px;height:50px;">
-        </a>
     </div>
 
     <!-- 底部初音大图 -->
     <div class="miku-full">
         <img src="miku4.png" alt="初音未来">
     </div>
+
+    <!-- 四角图片 -->
     <div class="corner-img top-left">
         <img src="miku5.png" alt="角落初音">
     </div>
@@ -201,5 +242,6 @@
     <div class="corner-img bottom-right">
         <img src="miku8.png" alt="角落初音">
     </div>
+
 </body>
 </html>
