@@ -291,31 +291,18 @@
         <img src="miku8.png" alt="角落初音">
     </div>
 
+    <img src="miku9.gif" class="float-img">
+
     <script>
-// 让页面里所有图片自动漂浮
-    window.onload = function() {
-      const imgs = document.querySelectorAll("img");
-
-      imgs.forEach(img => {
-    // 给所有图片加上漂浮样式
-        img.classList.add("float-img");
-
-    // 随机初始位置
-        img.style.left = Math.random() * (window.innerWidth - img.width) + "px";
-        img.style.top = Math.random() * (window.innerHeight - img.height) + "px";
-      });
-
-  // 每 3.5 秒全部换一次位置
-      setInterval(() => {
-        document.querySelectorAll(".float-img").forEach(img => {
-          let x = Math.random() * (window.innerWidth - img.width);
-          let y = Math.random() * (window.innerHeight - img.height);
-          img.style.left = x + "px";
-          img.style.top = y + "px";
-        });
-      }, 3500);
-    };
+    const img = document.querySelector(".float-img");
+    function move() {
+      let maxX = window.innerWidth - img.offsetWidth;
+      let maxY = window.innerHeight - img.offsetHeight;
+      img.style.left = Math.random() * maxX + "px";
+      img.style.top = Math.random() * maxY + "px";
+    }
+    setInterval(move, 3500);
+    window.onload = move;
     </script>
-
 </body>
 </html>
