@@ -125,21 +125,34 @@
             border-radius: 16px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
+        .corner-img {
+            position: absolute;
+            width: 120px;
+            z-index: 1;
+        }
+        .corner-img img {
+            width: 100%;
+            display: block;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="corner-img top-left">
-        <img src="miku5.png" alt="角落初音">
-    </div>
-    <div class="corner-img top-right">
-        <img src="miku6.png" alt="角落初音">
-    </div>
-    <div class="corner-img bottom-left">
-        <img src="miku7.png" alt="角落初音">
-    </div>
-    <div class="corner-img bottom-right">
-        <img src="miku8.png" alt="角落初音">
-    </div>
     <!-- 左侧固定初音 -->
     <div class="side-miku left-miku">
         <img src="miku1.png" alt="初音未来">
@@ -170,6 +183,18 @@
     <!-- 底部初音大图 -->
     <div class="miku-full">
         <img src="miku4.png" alt="初音未来">
+    </div>
+    <div class="corner-img top-left">
+        <img src="miku5.png" alt="角落初音">
+    </div>
+    <div class="corner-img top-right">
+        <img src="miku6.png" alt="角落初音">
+    </div>
+    <div class="corner-img bottom-left">
+        <img src="miku7.png" alt="角落初音">
+    </div>
+    <div class="corner-img bottom-right">
+        <img src="miku8.png" alt="角落初音">
     </div>
 </body>
 </html>
