@@ -190,6 +190,13 @@
                 margin: 10px auto;
             }
         }
+        .float-img {
+          position: absolute;
+          width: 60px;
+          transition: all 2.5s ease-out;
+          pointer-events: none;
+          z-index: 3;
+         }
     </style>
 </head>
 <body>
@@ -283,6 +290,20 @@
     <div class="corner-img bottom-right">
         <img src="miku8.png" alt="角落初音">
     </div>
+
+    <img src="miku9.gif" class="float-img">
+
+    <script>
+    const img = document.querySelector(".float-img");
+    function move() {
+      let maxX = window.innerWidth - img.offsetWidth;
+      let maxY = window.innerHeight - img.offsetHeight;
+      img.style.left = Math.random() * maxX + "px";
+      img.style.top = Math.random() * maxY + "px";
+    }
+    setInterval(move, 3500);
+    window.onload = move;
+    </script>
 
 </body>
 </html>
