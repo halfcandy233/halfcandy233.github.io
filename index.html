@@ -217,9 +217,31 @@
         </audio>
 
 
-        <button onclick="document.getElementById('bgMusic').muted=false" style="padding:6px 16px; border:none; border-radius:20px; background:#39C5BB; color:#fff; font-size:14px; cursor:pointer; margin:10px 0;">
+        <button id="playBtn" style="padding:6px 16px; border:none; border-radius:20px; background:#39C5BB; color:#fff; font-size:14px; cursor:pointer; margin:10px 0;">
   开启背景音乐
         </button>
+
+        <script>
+          const audio = document.getElementById('bgMusic');
+          const btn = document.getElementById('playBtn');
+          let isPlaying = false;
+
+          btn.addEventListener('click', () => {
+            if (!isPlaying) {
+              audio.play().then(() => {
+                btn.textContent = '暂停背景音乐';
+                isPlaying = true;
+              }).catch(err => {
+                alert('播放失败，请检查文件路径是否正确');
+                console.error(err);
+              });
+            } else {
+              audio.pause();
+              btn.textContent = '开启背景音乐';
+              isPlaying = false;
+            }
+          });
+        </script>
     
         <div class="info">
             <p><span class="label">姓名：</span>pareo</p>
